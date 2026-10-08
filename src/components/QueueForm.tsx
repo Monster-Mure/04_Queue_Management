@@ -1,5 +1,5 @@
 import { useState } from "react"
-import type { FormEvent } from "react"
+import type { SubmitEvent } from "react"
 import { FaUserPlus } from "react-icons/fa"
 import type { NewQueueCustomer } from "../types"
 
@@ -12,7 +12,7 @@ export default function QueueForm({ onAdd }: QueueFormProps) {
   const [name, setName] = useState("")
   const [service, setService] = useState("")
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: SubmitEvent<HTMLFormElement>) => {
     // Stop the browser from reloading the page when the form is submitted.
     event.preventDefault()
     if (!name.trim() || !service.trim()) return
